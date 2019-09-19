@@ -1,5 +1,5 @@
 bases:
   - ../../default
 
-patches:
+patchesStrategicMerge:
   - manager_image_patch.yaml

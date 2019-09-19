@@ -10,7 +10,7 @@
 resources:
 - serving_v1alpha2_kfservice.yaml
 
-patches:
+patchesStrategicMerge:
   # Knative uses VolatileTime in place of metav1.Time to exclude this from creating equality.Semantic difference,
   # however when generating crd last transition time is tagged as object thus getting validation error while updating
   # status object(status.conditions.lastTransitionTime in body must be of type object: "string").

@@ -59,7 +59,7 @@ MODEL_NAME=sklearn-iris
 INPUT_PATH=@./iris-input.json
 CLUSTER_IP=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
-curl -v -H "Host: sklearn-iris.default.svc.cluster.local" http://$CLUSTER_IP/models/$MODEL_NAME:predict -d $INPUT_PATH
+curl -v -H "Host: sklearn-iris-predict.default.example.com" http://$CLUSTER_IP/models/$MODEL_NAME:predict -d $INPUT_PATH
 ```
 
 Expected Output
